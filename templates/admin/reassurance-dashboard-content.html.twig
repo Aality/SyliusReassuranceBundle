@@ -1,0 +1,13 @@
+{% if hookable_metadata.context.has("form") %}
+    {% set reassuranceForm = hookable_metadata.context.form %}
+{% endif %}
+
+{% if reassuranceForm is defined %}
+    {{ dump(reassuranceForm) }}
+    {{ form_start(reassuranceForm) }}
+    {{ form_widget(reassuranceForm) }}
+    <button class="ui primary button">Enregistrer</button>
+    {{ form_end(reassuranceForm) }}
+{% else %}
+    <div class="ui red message">⚠️ Le formulaire n’est pas transmis au hook.</div>
+{% endif %}
