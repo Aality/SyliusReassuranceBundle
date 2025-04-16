@@ -1,0 +1,9 @@
+app_reassurance:
+  resource: |
+    alias: app.reassurance
+    section: admin
+    templates: "@AaReassurance/admin/reassurance"
+    grid: app_admin_reassurance
+    redirect: index
+  type: sylius.resource
+  prefix: admin

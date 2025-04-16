@@ -1,0 +1,37 @@
+sylius_resource:
+    resources:
+        app.reassurance:
+            classes:
+                model: Aality\ReassuranceBundle\Entity\Reassurance\Reassurance
+                
+services:
+    Aality\ReassuranceBundle\EventSubscriber\AdminMenuSubscriber:
+        tags:
+            - { name: kernel.event_subscriber }
+
+sylius_grid:
+    grids:
+        app_admin_reassurance:
+            fields:
+                title:
+                    type: string
+            driver:
+                name: doctrine/orm
+                options:
+                    class: Aality\ReassuranceBundle\Entity\Reassurance\Reassurance
+            actions:
+                main:
+                    create:
+                        type: create
+                item:
+                    update:
+                        type: update
+                    delete:
+                        type: delete
+
+# config/packages/twig.yaml
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    paths:
+        '%kernel.project_dir%/vendor/aality/ReassuranceBundle/templates': ReassuranceBundle
+

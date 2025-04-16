@@ -1,0 +1,19 @@
+{
+    "name": "aality/sylius-reassurance-bundle",
+    "type": "sylius-plugin",
+    "version": "1.0.1",
+    "require": {
+        "php": ">=8.2"
+    },
+    "keywords": [
+        "sylius",
+        "sylius-plugin"
+    ],
+    "description": "Reassurance",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Aality\\ReassuranceBundle\\": "src/"
+        }
+    }
+}

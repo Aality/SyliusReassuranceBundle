@@ -1,0 +1,18 @@
+<div id="aa-reassurance" class="my-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            {% for reassurance in reassurances %}
+                {% if loop.index <= 4 %}
+                    <div class="col-lg-3">
+                        {% if reassurance.image %}
+                            <img class="mb-4" src="{{ asset('uploads/reassurances/' ~ reassurance.image) }}" width="115" alt="{{ reassurance.title }}"/>
+                        {% endif %}
+                        <p class="reassurance__title mb-3">{{ reassurance.title }}</p>
+                        <p class="reassurance__text mb-0">{{ reassurance.text }}</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
