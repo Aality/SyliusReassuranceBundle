@@ -1,1 +1,12 @@
 {% extends '@SyliusAdmin/shared/crud/update.html.twig' %}
+
+{% block sylius_admin_content %}
+    {{ parent() }}
+
+    {% if resource.image %}
+        <div style="margin-top: 20px;">
+            <strong>Image actuelle :</strong><br>
+            <img src="{{ asset('uploads/reassurances/' ~ resource.image) }}" alt="" style="max-height: 100px;" />
+        </div>
+    {% endif %}
+{% endblock %}

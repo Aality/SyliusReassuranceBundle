@@ -3,6 +3,9 @@
 namespace Aality\ReassuranceBundle\Form\Type;
 
 use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
+use Symfony\Component\Form\Extension\Core\Type\ButtonType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Sylius\Bundle\ChannelBundle\Form\Type\ChannelChoiceType;
@@ -24,9 +27,22 @@ class ReassuranceType extends AbstractResourceType
         $builder
             ->add('title')
             ->add('text')
+
             ->add('image', FileType::class, [
                 'required' => false,
                 'mapped' => false, // Pour éviter de mapper directement sur l'entité
+            ])
+            ->add('image_name_display', TextType::class, [
+                'mapped' => false,
+                'data' => $options['data']->getImage(),
+                'label' => ' ',
+                'required' => false,
+                'disabled' => true,
+            ])
+            ->add('remove_image_checkbox', CheckboxType::class, [
+                'required' => false,
+                'mapped' => false,
+                'label' => 'Supprimer l’image actuelle',
             ]);
         ;
 
@@ -46,6 +62,10 @@ class ReassuranceType extends AbstractResourceType
                 $filename = $file->getClientOriginalName();
                 $file->move($uploadDir, $filename);
                 $reassurance->setImage($filename);
+            }
+
+            if ($form->get('remove_image_checkbox')->getData()) {
+                $reassurance->setImage(null);
             }
         });
     }
