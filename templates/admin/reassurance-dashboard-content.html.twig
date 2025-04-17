@@ -1,13 +1,34 @@
 {% if hookable_metadata.context.has("form") %}
-    {% set reassuranceForm = hookable_metadata.context.form %}
+    {% set form = hookable_metadata.context.form %}
 {% endif %}
 
-{% if reassuranceForm is defined %}
-    {{ dump(reassuranceForm) }}
-    {{ form_start(reassuranceForm) }}
-    {{ form_widget(reassuranceForm) }}
-    <button class="ui primary button">Enregistrer</button>
-    {{ form_end(reassuranceForm) }}
-{% else %}
-    <div class="ui red message">⚠️ Le formulaire n’est pas transmis au hook.</div>
+{% if form is defined %}
+
+{% if resource is not defined %}
+    {% set resource = hookable_metadata.context.resource|default(null) %}
+{% endif %}
+
+{% form_theme form '@SyliusAdmin/shared/form_theme.html.twig' %}
+
+<div class="container-xl" {% if attributes is defined %} {{ attributes }} {% endif %}>
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'id': form.vars.id}}) }}
+
+    <div class="card">
+        <div class="card-header">
+            <h1 class="mb-0">Réglages</h1>
+        </div>
+        <div class="card-body">
+
+            {{ form_errors(form) }}
+            {{ form_widget(form._token) }}
+            {{ form_widget(form) }}
+
+            <button class="btn btn-primary" type="submit">
+                Enregistrer
+            </button>
+        </div>
+        {{ form_end(form, {render_rest: hookable_metadata.configuration.render_rest|default(false)}) }}
+    </div>
+</div>
+
 {% endif %}

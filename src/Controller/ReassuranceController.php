@@ -2,6 +2,7 @@
 
 namespace Aality\ReassuranceBundle\Controller;
 
+use Aality\ReassuranceBundle\Entity\Configuration\Configuration;
 use Aality\ReassuranceBundle\Entity\Reassurance\Reassurance;
 use Aality\ReassuranceBundle\Form\Type\ReassuranceType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -23,8 +24,10 @@ final class ReassuranceController extends AbstractController
     {
 
         $reassurances = $this->em->getRepository(Reassurance::class)->findAll();
+        $configuration = $this->em->getRepository(Configuration::class)->find(1);
+
         return $this->render('@ReassuranceBundle/shop/reassurance.html.twig',
-            ['reassurances' => $reassurances]
+            ['reassurances' => $reassurances, 'configuration' => $configuration]
         );
     }
 

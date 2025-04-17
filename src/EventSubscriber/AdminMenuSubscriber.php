@@ -46,8 +46,8 @@ final class AdminMenuSubscriber implements EventSubscriberInterface
         $menuPage = $menu->getChild('reassurance');
 
         $menuPage->addChild('reassuranceIndex', ['route' => 'aality_reassurance_admin_reassurance_index'])->setLabel('Réassurances');
-
         $menuPage->addChild('reassuranceCreate', ['route' => 'aality_reassurance_admin_reassurance_create'])->setLabel('Nouvelle réassurance');
+        $menuPage->addChild('reassuranceConfiguration', ['route' => 'aality_reassurance_admin_configuration'])->setLabel('Réglages');
 
     }
 }

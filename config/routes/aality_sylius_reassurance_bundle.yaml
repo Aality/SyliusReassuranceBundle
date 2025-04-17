@@ -1,9 +1,14 @@
-app_reassurance:
+aality_reassurance:
   resource: |
-    alias: app.reassurance
+    alias: aality_reassurance.reassurance
     section: admin
-    templates: "@AaReassurance/admin/reassurance"
-    grid: app_admin_reassurance
+    templates: "@ReassuranceBundle/admin/reassurance"
+    grid: aality_reassurance
     redirect: index
   type: sylius.resource
   prefix: admin
+  
+aality_reassurance_admin_configuration:
+  path: /admin/reassurance/configuration
+  controller: Aality\ReassuranceBundle\Controller\ConfigurationController::configure
+  methods: [ GET, POST ]
