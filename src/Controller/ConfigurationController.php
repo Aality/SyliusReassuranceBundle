@@ -32,8 +32,11 @@ class ConfigurationController extends AbstractController
             return $this->redirectToRoute('aality_reassurance_admin_configuration');
         }
 
+        $aalityBanner = file_get_contents('https://www.aality.fr/embed/prestashop/module-header.html');
+
         return $this->render('@ReassuranceBundle/admin/reassurance-dashboard.html.twig', [
             'form' => $form->createView(),
+            'aalityBanner' => $aalityBanner
         ]);
     }
 }
