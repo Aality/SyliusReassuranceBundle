@@ -15,7 +15,9 @@
 
     <div class="card">
         <div class="card-header">
-            <h1 class="mb-0">Réglages</h1>
+            <h1 class="mb-0">
+                {{ 'aality_reassurance.ui.settings'|trans }}
+            </h1>
         </div>
         <div class="card-body">
 
@@ -24,7 +26,7 @@
             {{ form_widget(form) }}
 
             <button class="btn btn-primary" type="submit">
-                Enregistrer
+                {{ 'aality_reassurance.ui.save'|trans }}
             </button>
         </div>
         {{ form_end(form, {render_rest: hookable_metadata.configuration.render_rest|default(false)}) }}

@@ -1,0 +1,7 @@
+aality_reassurance:
+    ui:
+        reassurance: 'Réassurance'    
+        reassurances: 'Réassurances'    
+        settings: 'Réglages'
+        save: 'Enregistrer'
+
