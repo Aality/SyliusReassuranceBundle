@@ -34,11 +34,11 @@ import './scss/vendor/aality-sylius-reassurance-bundle.scss';
 </p>
 </details>  
 
-Generate migrations (be sure to have migration bundle installed) :
+Generate migrations (be sure to have maker bundle installed) :
 
 ```bash
-# Optional if you do not have doctrine-migration-bundle 
-# composer require doctrine/doctrine-migrations-bundle "^3.0"
+# Optional if you do not have maker bundle
+# composer require --dev symfony/maker-bundle
 
 bin/console make:migration
 ```
