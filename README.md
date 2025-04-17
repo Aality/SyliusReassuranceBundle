@@ -34,9 +34,12 @@ import './scss/vendor/aality-sylius-reassurance-bundle.scss';
 </p>
 </details>  
 
-Generate migrations :
+Generate migrations (be sure to have migration bundle installed) :
 
-```bash 
+```bash
+# Optional if you do not have doctrine-migration-bundle 
+# composer require doctrine/doctrine-migrations-bundle "^3.0"
+
 bin/console make:migration
 ```
 
