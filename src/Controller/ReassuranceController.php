@@ -25,9 +25,10 @@ final class ReassuranceController extends AbstractController
 
         $reassurances = $this->em->getRepository(Reassurance::class)->findAll();
         $configuration = $this->em->getRepository(Configuration::class)->find(1);
+        $theme = $configuration->getReassuranceTheme();
 
         return $this->render('@ReassuranceBundle/shop/reassurance.html.twig',
-            ['reassurances' => $reassurances, 'configuration' => $configuration]
+            ['reassurances' => $reassurances, 'configuration' => $configuration, 'theme' => $theme]
         );
     }
 

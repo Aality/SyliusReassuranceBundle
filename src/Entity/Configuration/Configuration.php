@@ -12,11 +12,38 @@ class Configuration
     #[ORM\Column(type: 'integer')]
     private ?int $id = null;
 
+    public const REASSURANCE_THEMES = [
+        'Classique' => 'classic',
+        'Sylius style' => 'sylius',
+        'Moderne' => 'modern',
+    ];
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private ?string $reassuranceTheme = null;
+
+    public function getReassuranceTheme(): ?string
+    {
+        return $this->reassuranceTheme;
+    }
+
+    public function setReassuranceTheme(?string $reassuranceTheme): void
+    {
+        $this->reassuranceTheme = $reassuranceTheme;
+    }
+
     #[ORM\Column(type: 'string', length: 20, nullable: true)]
     private ?string $backgroundColor = null;
 
     #[ORM\Column(type: 'string', length: 20, nullable: true)]
+    private ?string $titleColor = null;
+
+    #[ORM\Column(type: 'string', length: 20, nullable: true)]
     private ?string $textColor = null;
+
+
+    #[ORM\Column(type: 'integer')]
+    private ?string $iconSize = null;
+
 
     public function getId(): ?int
     {
@@ -41,5 +68,25 @@ class Configuration
     public function setTextColor(?string $color): void
     {
         $this->textColor = $color;
+    }
+
+    public function getTitleColor(): ?string
+    {
+        return $this->titleColor;
+    }
+
+    public function setTitleColor(?string $color): void
+    {
+        $this->titleColor = $color;
+    }
+
+    public function getIconSize(): ?int
+    {
+        return $this->iconSize;
+    }
+
+    public function setIconSize(?int $size): void
+    {
+        $this->iconSize = $size;
     }
 }

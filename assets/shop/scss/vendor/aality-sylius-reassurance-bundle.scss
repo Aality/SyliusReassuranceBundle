@@ -1,17 +1,47 @@
 #aa-reassurance {
-	background-color: var(--bs-secondary);
+	background-color: var(--aa-reassurance-background-color);
 	text-align: center;
 	padding: 50px 0;
-	color: #fff;
+
+	.reassurance {
+		margin-bottom: 40px;
+	}
 
 	.reassurance__title {
-		color: inherit;
 		font-size: 1.0625rem;
 		font-weight: bold;
 		margin-bottom: 1rem;
+		color: var(--aa-reassurance-title-color);
 	}
 
 	.reassurance__text {
-		color: inherit;
+		color: var(--aa-reassurance-text-color);
+	}
+
+	.reassurance__image {
+		margin-bottom: 1.5rem;
+	}
+}
+
+#aa-reassurance.aa-reassurance-2 {
+	text-align: left;
+
+	.reassurance {
+		display: flex;
+		align-items: flex-start;
+		margin-bottom: 40px;
+		padding-right: 80px;
+
+		@media (max-width: 991px) {
+			padding-right: 0;
+		}
+	}
+
+	.reassurance__title {
+		font-size: 1.25rem;
+	}
+
+	.reassurance__image {
+		margin-right: 2rem;
 	}
 }

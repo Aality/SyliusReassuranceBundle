@@ -1,18 +1,21 @@
-<div id="aa-reassurance" class="my-5" style="
-{% if configuration and configuration.backgroundColor %}background-color:{{ configuration.backgroundColor }};{% endif %}
-        {% if configuration and configuration.textColor %}color:{{ configuration.textColor }};{% endif %}
-        ">
-    <div class="container">
-        <div class="row justify-content-center">
-            {% for reassurance in reassurances %}
-                <div class="col-md-6 col-lg-3 mt-3 mt-lg-0">
-                    {% if reassurance.image %}
-                        <img class="mb-4" src="{{ asset('uploads/reassurances/' ~ reassurance.image) }}" width="115" alt="{{ reassurance.title }}"/>
-                    {% endif %}
-                    <p class="reassurance__title mb-3">{{ reassurance.title }}</p>
-                    <p class="reassurance__text mb-0">{{ reassurance.text }}</p>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-</div>
+
+
+<style>
+    #aa-reassurance {
+        {% if configuration and configuration.backgroundColor %}--aa-reassurance-background-color:{{ configuration.backgroundColor }};{% endif %}
+        {% if configuration and configuration.textColor %}--aa-reassurance-text-color:{{ configuration.textColor }};{% endif %}
+        {% if configuration and configuration.titleColor %}--aa-reassurance-title-color:{{ configuration.titleColor }};{% endif %}
+    }
+</style>
+
+{% if theme is defined and theme == 'classic' %}
+
+    {% include '@ReassuranceBundle/shop/themes/classic.html.twig' %}
+
+{% endif %}
+
+{% if theme is defined and theme == 'sylius' %}
+
+    {% include '@ReassuranceBundle/shop/themes/sylius.html.twig' %}
+
+{% endif %}

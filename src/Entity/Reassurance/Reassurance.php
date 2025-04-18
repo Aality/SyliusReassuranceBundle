@@ -2,6 +2,7 @@
 
 namespace Aality\ReassuranceBundle\Entity\Reassurance;
 
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Aality\ReassuranceBundle\Repository\ReassuranceRepository;
 
@@ -19,7 +20,7 @@ class Reassurance implements ReassuranceInterface
 
 
     #[Assert\NotBlank]
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(type: Types::TEXT)]
     private ?string $text = null;
 
     public function getId(): ?int
