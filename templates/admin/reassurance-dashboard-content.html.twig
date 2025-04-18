@@ -17,7 +17,6 @@
 
 
     <div class="container-xl" {% if attributes is defined %} {{ attributes }} {% endif %}>
-        {{ aalityBanner|raw }}
         {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'id': form.vars.id}}) }}
 
         <div class="card">
@@ -38,6 +37,8 @@
             </div>
             {{ form_end(form, {render_rest: hookable_metadata.configuration.render_rest|default(false)}) }}
         </div>
+        {{ aalityBanner|raw }}
     </div>
+
 
 {% endif %}
