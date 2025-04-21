@@ -37,7 +37,7 @@ final class AdminMenuSubscriber implements EventSubscriberInterface
         $menu
             ->addChild('reassurance')
             ->setLabel('Réassurance')
-            ->setLabelAttribute('icon', 'tabler:file-description')
+            ->setLabelAttribute('icon', 'tabler:align-box-left-stretch')
         ;
 
         $menu->addChild($configurationMenu);

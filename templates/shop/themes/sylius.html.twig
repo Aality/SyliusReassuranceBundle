@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             {% for reassurance in reassurances %}
-                <div class="reassurance col-md-6 mt-3 mt-lg-0">
+                <div class="reassurance col-lg-6 mt-3 mt-lg-0">
                     {% if reassurance.image %}
                         <img class="reassurance__image" src="{{ asset('uploads/reassurances/' ~ reassurance.image) }}"
                              width="{% if configuration and configuration.iconSize %}{{ configuration.iconSize }}{% else %}120{% endif %}"
@@ -17,3 +17,4 @@
         </div>
     </div>
 </div>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, accusamus aliquam amet atque aut cupiditate deserunt harum, in itaque iusto labore, minus nobis porro quas quia ratione rerum soluta. Culpa?

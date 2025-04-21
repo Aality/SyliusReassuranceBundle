@@ -13,9 +13,8 @@ class Configuration
     private ?int $id = null;
 
     public const REASSURANCE_THEMES = [
-        'Classique' => 'classic',
-        'Sylius style' => 'sylius',
-        'Moderne' => 'modern',
+        'Classique style' => 'classic',
+        'Sylius style' => 'sylius'
     ];
 
     #[ORM\Column(type: 'string', length: 255)]
