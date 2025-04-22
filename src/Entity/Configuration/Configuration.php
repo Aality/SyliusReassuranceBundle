@@ -1,6 +1,6 @@
 <?php
 
-namespace Aality\ReassuranceBundle\Entity\Configuration;
+namespace Aality\SyliusReassuranceBundle\Entity\Configuration;
 
 use Doctrine\ORM\Mapping as ORM;
 

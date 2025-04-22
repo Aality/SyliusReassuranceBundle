@@ -1,10 +1,10 @@
 <?php
 
-namespace Aality\ReassuranceBundle\Entity\Reassurance;
+namespace Aality\SyliusReassuranceBundle\Entity\Reassurance;
 
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use Aality\ReassuranceBundle\Repository\ReassuranceRepository;
+use Aality\SyliusReassuranceBundle\Repository\ReassuranceRepository;
 
 #[ORM\Entity(repositoryClass: ReassuranceRepository::class)]
 class Reassurance implements ReassuranceInterface

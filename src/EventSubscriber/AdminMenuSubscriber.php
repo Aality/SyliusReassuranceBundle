@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Aality\ReassuranceBundle\EventSubscriber;
+namespace Aality\SyliusReassuranceBundle\EventSubscriber;
 
 use App\Entity\User\AdminUser;
 use Knp\Menu\MenuItem;

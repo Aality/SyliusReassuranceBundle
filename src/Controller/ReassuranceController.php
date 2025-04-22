@@ -1,10 +1,10 @@
 <?php
 
-namespace Aality\ReassuranceBundle\Controller;
+namespace Aality\SyliusReassuranceBundle\Controller;
 
-use Aality\ReassuranceBundle\Entity\Configuration\Configuration;
-use Aality\ReassuranceBundle\Entity\Reassurance\Reassurance;
-use Aality\ReassuranceBundle\Form\Type\ReassuranceType;
+use Aality\SyliusReassuranceBundle\Entity\Configuration\Configuration;
+use Aality\SyliusReassuranceBundle\Entity\Reassurance\Reassurance;
+use Aality\SyliusReassuranceBundle\Form\Type\ReassuranceType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
@@ -27,7 +27,7 @@ final class ReassuranceController extends AbstractController
         $configuration = $this->em->getRepository(Configuration::class)->find(1);
         $theme = $configuration->getReassuranceTheme();
 
-        return $this->render('@ReassuranceBundle/shop/reassurance.html.twig',
+        return $this->render('@SyliusReassuranceBundle/shop/reassurance.html.twig',
             ['reassurances' => $reassurances, 'configuration' => $configuration, 'theme' => $theme]
         );
     }

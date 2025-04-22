@@ -4,6 +4,8 @@ If you want to use our recipes, you can configure your composer.json by running:
  composer config --no-plugins --json extra.symfony.endpoint '["https://api.github.com/repos/Sylius/SyliusRecipes/contents/index.json?ref=flex/main", "https://api.github.com/repos/Aality/recipes/contents/index.json?ref=flex/main","flex://defaults"]'
 ```
 
+Then, require our bundle.
+
 ```bash
  composer require aality/sylius-reassurance-bundle
 ```
@@ -17,7 +19,7 @@ Change your `config/bundles.php` file to add this line for the plugin declaratio
 
 return [
     //..
-    Aality\ReassuranceBundle\ReassuranceBundle::class => ['all' => true],
+    Aality\SyliusReassuranceBundle\SyliusReassuranceBundle::class => ['all' => true],
 ];  
 ```
 
@@ -33,15 +35,6 @@ import './scss/vendor/aality-sylius-reassurance-bundle.scss';
 
 </p>
 </details>  
-
-Generate migrations (be sure to have maker bundle installed) :
-
-```bash
-# Optional if you do not have maker bundle
-# composer require --dev symfony/maker-bundle
-
-bin/console make:migration
-```
 
 Update your database:
 

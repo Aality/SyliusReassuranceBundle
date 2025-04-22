@@ -1,6 +1,6 @@
 <?php
 
-namespace Aality\ReassuranceBundle\Repository;
+namespace Aality\SyliusReassuranceBundle\Repository;
 
 use Sylius\Bundle\ResourceBundle\Doctrine\ORM\EntityRepository;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Aality\ReassuranceBundle\Form\Type;
+namespace Aality\SyliusReassuranceBundle\Form\Type;
 
-use Aality\ReassuranceBundle\Entity\Configuration\Configuration;
+use Aality\SyliusReassuranceBundle\Entity\Configuration\Configuration;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;

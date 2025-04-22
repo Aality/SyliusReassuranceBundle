@@ -1,6 +1,6 @@
 <?php
 
-namespace Aality\ReassuranceBundle\Entity\Reassurance;
+namespace Aality\SyliusReassuranceBundle\Entity\Reassurance;
 
 use Sylius\Component\Resource\Model\ResourceInterface;
 

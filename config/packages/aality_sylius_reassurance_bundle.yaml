@@ -2,29 +2,29 @@ sylius_resource:
     resources:
         aality_reassurance.reassurance:
             classes:
-                model: Aality\ReassuranceBundle\Entity\Reassurance\Reassurance
-                form: Aality\ReassuranceBundle\Form\Type\ReassuranceType
-                
+                model: Aality\SyliusReassuranceBundle\Entity\Reassurance\Reassurance
+                form: Aality\SyliusReassuranceBundle\Form\Type\ReassuranceType
 
-    
+
+
 services:
-    Aality\ReassuranceBundle\EventSubscriber\AdminMenuSubscriber:
+    Aality\SyliusReassuranceBundle\EventSubscriber\AdminMenuSubscriber:
         tags:
             - { name: kernel.event_subscriber }
         arguments:
           [ '@security.helper' ]
-    Aality\ReassuranceBundle\Form\Type\ReassuranceType:
+    Aality\SyliusReassuranceBundle\Form\Type\ReassuranceType:
         arguments:
             $projectDir: '%kernel.project_dir%'
         tags: [ 'form.type' ]
-        
 
-    Aality\ReassuranceBundle\Controller\ReassuranceController:
+
+    Aality\SyliusReassuranceBundle\Controller\ReassuranceController:
         autowire: true
         autoconfigure: true
         tags: [ 'controller.service_arguments' ]
-        
-    Aality\ReassuranceBundle\Controller\ConfigurationController:
+
+    Aality\SyliusReassuranceBundle\Controller\ConfigurationController:
         autowire: true
         autoconfigure: true
         tags: [ 'controller.service_arguments' ]
@@ -41,12 +41,12 @@ sylius_grid:
                     label: Image
                     path: .
                     options:
-                        template: '@ReassuranceBundle/admin/reassurance/Grid/Field/image.html.twig'
-    
+                        template: '@SyliusReassuranceBundle/admin/reassurance/Grid/Field/image.html.twig'
+
             driver:
                 name: doctrine/orm
                 options:
-                    class: Aality\ReassuranceBundle\Entity\Reassurance\Reassurance
+                    class: Aality\SyliusReassuranceBundle\Entity\Reassurance\Reassurance
             actions:
                 main:
                     create:
@@ -61,7 +61,7 @@ sylius_grid:
 twig:
     default_path: '%kernel.project_dir%/templates'
     paths:
-        '%kernel.project_dir%/vendor/aality/sylius-reassurance-bundle/templates': ReassuranceBundle
+        '%kernel.project_dir%/vendor/aality/sylius-reassurance-bundle/templates': SyliusReassuranceBundle
 
 parameters:
     reassurance_images_directory: '%kernel.project_dir%/public/uploads/reassurances'
@@ -79,7 +79,7 @@ sylius_twig_hooks:
             content:
                 template: '@SyliusAdmin/shared/crud/common/content.html.twig'
                 priority: 0
-        
+
         'sylius_admin.reassurance.index.content':
             flashes:
                 template: '@SyliusAdmin/shared/crud/common/content/flashes.html.twig'
@@ -88,4 +88,4 @@ sylius_twig_hooks:
                 template: '@SyliusAdmin/shared/crud/common/content/header.html.twig'
                 priority: 200
             custom_content:
-                template: '@ReassuranceBundle/admin/reassurance-dashboard-content.html.twig'
+                template: '@SyliusReassuranceBundle/admin/reassurance-dashboard-content.html.twig'

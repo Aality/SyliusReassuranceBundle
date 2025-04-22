@@ -1,9 +1,9 @@
 <?php
 
-namespace Aality\ReassuranceBundle\Controller;
+namespace Aality\SyliusReassuranceBundle\Controller;
 
-use Aality\ReassuranceBundle\Entity\Configuration\Configuration;
-use Aality\ReassuranceBundle\Form\Type\ConfigurationType;
+use Aality\SyliusReassuranceBundle\Entity\Configuration\Configuration;
+use Aality\SyliusReassuranceBundle\Form\Type\ConfigurationType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -34,7 +34,7 @@ class ConfigurationController extends AbstractController
 
         $aalityBanner = file_get_contents('https://www.aality.fr/embed/sylius/module-header.html');
 
-        return $this->render('@ReassuranceBundle/admin/reassurance-dashboard.html.twig', [
+        return $this->render('@SyliusReassuranceBundle/admin/reassurance-dashboard.html.twig', [
             'form' => $form->createView(),
             'aalityBanner' => $aalityBanner
         ]);

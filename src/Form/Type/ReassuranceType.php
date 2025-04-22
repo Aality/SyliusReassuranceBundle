@@ -1,6 +1,6 @@
 <?php
 
-namespace Aality\ReassuranceBundle\Form\Type;
+namespace Aality\SyliusReassuranceBundle\Form\Type;
 
 use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
 use Symfony\Component\Form\Extension\Core\Type\ButtonType;
@@ -13,7 +13,7 @@ use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Aality\ReassuranceBundle\Entity\Reassurance\Reassurance;
+use Aality\SyliusReassuranceBundle\Entity\Reassurance\Reassurance;
 
 class ReassuranceType extends AbstractResourceType
 {
