@@ -3,6 +3,28 @@ If you want to use our recipes, you can configure your composer.json by running:
 ```bash
  composer config --no-plugins --json extra.symfony.endpoint '["https://api.github.com/repos/Sylius/SyliusRecipes/contents/index.json?ref=flex/main", "https://api.github.com/repos/Aality/recipes/contents/index.json?ref=flex/main","flex://defaults"]'
 ```
+Edit your `composer.json`file to add our VCS repository. 
+If you do not have "repositories" entry, you can add it in top of "require" for exemple.
+
+```json
+"authors" : ...,
+"repositories": [
+        {
+            "type": "vcs",
+            "url": "whateverURL/whateverRepository"
+        },
+        ...,
+        {
+            "type": "vcs",
+            "url": "https://github.com/Aality/SyliusReassuranceBundle.git"
+        }
+    ],
+ "require": {
+        "php": "^8.2",
+       ....
+ },
+ ...
+```
 
 Then, require our bundle.
 
@@ -45,4 +67,11 @@ bin/console doctrine:migration:migrate
 Clear Cache !
 ```bash 
 bin/console c:c
+```
+
+After configuring your reassurances in admin, use this to display reassurance in your templates : 
+
+```twig
+{{ render(controller('Aality\\SyliusReassuranceBundle\\Controller\\ReassuranceController::index')) }}
+
 ```
