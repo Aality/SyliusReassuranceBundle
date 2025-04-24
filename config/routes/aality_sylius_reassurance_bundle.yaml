@@ -7,7 +7,7 @@ aality_reassurance:
     redirect: index
   type: sylius.resource
   prefix: admin
-
+  
 aality_reassurance_admin_configuration:
   path: /admin/reassurance/configuration
   controller: Aality\SyliusReassuranceBundle\Controller\ConfigurationController::configure
