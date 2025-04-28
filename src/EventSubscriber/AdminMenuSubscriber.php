@@ -31,6 +31,7 @@ final class AdminMenuSubscriber implements EventSubscriberInterface
         $configurationMenu = $menu->getChild('configuration');
         $supportMenu = $menu->getChild('official_support');
 
+
         $menu->removeChild('configuration');
         $menu->removeChild('official_support');
 
@@ -43,11 +44,12 @@ final class AdminMenuSubscriber implements EventSubscriberInterface
         $menu->addChild($configurationMenu);
         $menu->addChild($supportMenu);
 
-        $menuPage = $menu->getChild('reassurance');
+        $menuReassurance = $menu->getChild('reassurance');
 
-        $menuPage->addChild('reassuranceIndex', ['route' => 'aality_reassurance_admin_reassurance_index'])->setLabel('Réassurances');
-        $menuPage->addChild('reassuranceCreate', ['route' => 'aality_reassurance_admin_reassurance_create'])->setLabel('Nouvelle réassurance');
-        $menuPage->addChild('reassuranceConfiguration', ['route' => 'aality_reassurance_admin_configuration'])->setLabel('Réglages');
+
+        $menuReassurance->addChild('reassuranceIndex', ['route' => 'aality_reassurance_admin_reassurance_index'])->setLabel('Réassurances');
+        $menuReassurance->addChild('reassuranceCreate', ['route' => 'aality_reassurance_admin_reassurance_create'])->setLabel('Nouvelle réassurance');
+        $menuReassurance->addChild('reassuranceConfiguration', ['route' => 'aality_reassurance_admin_configuration'])->setLabel('Réglages');
 
     }
 }
