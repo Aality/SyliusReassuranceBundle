@@ -18,7 +18,7 @@ class Configuration
     ];
 
     #[ORM\Column(type: 'string', length: 255)]
-    private ?string $reassuranceTheme = null;
+    private ?string $reassuranceTheme = 'classic';
 
     public function getReassuranceTheme(): ?string
     {
