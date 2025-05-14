@@ -9,10 +9,11 @@ use Knp\Menu\MenuItem;
 use Sylius\Bundle\UiBundle\Menu\Event\MenuBuilderEvent;
 use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 final class AdminMenuSubscriber implements EventSubscriberInterface
 {
-    public function __construct(private Security $security)
+    public function __construct(private Security $security, private TranslatorInterface $translator)
     {
 
     }
@@ -37,7 +38,7 @@ final class AdminMenuSubscriber implements EventSubscriberInterface
 
         $menu
             ->addChild('reassurance')
-            ->setLabel('Réassurance')
+            ->setLabel($this->translator->trans('aality_reassurance.menu.main'))
             ->setLabelAttribute('icon', 'tabler:align-box-left-stretch')
         ;
 
@@ -47,9 +48,9 @@ final class AdminMenuSubscriber implements EventSubscriberInterface
         $menuReassurance = $menu->getChild('reassurance');
 
 
-        $menuReassurance->addChild('reassuranceIndex', ['route' => 'aality_reassurance_admin_reassurance_index'])->setLabel('Réassurances');
-        $menuReassurance->addChild('reassuranceCreate', ['route' => 'aality_reassurance_admin_reassurance_create'])->setLabel('Nouvelle réassurance');
-        $menuReassurance->addChild('reassuranceConfiguration', ['route' => 'aality_reassurance_admin_configuration'])->setLabel('Réglages');
+        $menuReassurance->addChild('reassuranceIndex', ['route' => 'aality_reassurance_admin_reassurance_index'])->setLabel($this->translator->trans('aality_reassurance.menu.list'));
+        $menuReassurance->addChild('reassuranceCreate', ['route' => 'aality_reassurance_admin_reassurance_create'])->setLabel($this->translator->trans('aality_reassurance.menu.new'));
+        $menuReassurance->addChild('reassuranceConfiguration', ['route' => 'aality_reassurance_admin_configuration'])->setLabel($this->translator->trans('aality_reassurance.menu.settings'));
 
     }
 }

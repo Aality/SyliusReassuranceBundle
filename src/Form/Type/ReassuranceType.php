@@ -4,6 +4,7 @@ namespace Aality\SyliusReassuranceBundle\Form\Type;
 
 use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
 use Symfony\Component\Form\Extension\Core\Type\ButtonType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -25,26 +26,30 @@ class ReassuranceType extends AbstractResourceType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('title')
-            ->add('text')
-
+            ->add('title', TextType::class, [
+                'label' => 'aality_reassurance.reassurance_form.title_label',
+            ])
+            ->add('text', TextareaType::class, [
+                'label' => 'aality_reassurance.reassurance_form.text_label',
+            ])
             ->add('image', FileType::class, [
+                'label' => 'aality_reassurance.reassurance_form.image_label',
                 'required' => false,
                 'mapped' => false, // Pour éviter de mapper directement sur l'entité
             ])
             ->add('image_name_display', TextType::class, [
                 'mapped' => false,
                 'data' => $options['data']->getImage(),
-                'label' => ' ',
+                'label' => 'aality_reassurance.reassurance_form.image_name_display_label',
                 'required' => false,
                 'disabled' => true,
             ])
             ->add('remove_image_checkbox', CheckboxType::class, [
                 'required' => false,
                 'mapped' => false,
-                'label' => 'Supprimer l’image actuelle',
+                'label' => 'aality_reassurance.reassurance_form.remove_image_label',
             ]);
-        ;
+
 
         $builder->addEventListener(FormEvents::POST_SUBMIT, function (FormEvent $event) {
             /** @var Reassurance $reassurance */

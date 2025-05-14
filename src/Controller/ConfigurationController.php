@@ -27,7 +27,7 @@ class ConfigurationController extends AbstractController
             $em->persist($config);
             $em->flush();
 
-            $this->addFlash('success', 'Réglages enregistrés avec succès.');
+            $this->addFlash('success', 'aality_reassurance.flash.settings_saved');
 
             return $this->redirectToRoute('aality_reassurance_admin_configuration');
         }
@@ -36,7 +36,7 @@ class ConfigurationController extends AbstractController
 
         return $this->render('@SyliusReassuranceBundle/admin/reassurance-dashboard.html.twig', [
             'form' => $form->createView(),
-            'aalityBanner' => $aalityBanner
+            'aalityBanner' => $aalityBanner,
         ]);
     }
 }

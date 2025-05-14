@@ -1,7 +1,30 @@
 aality_reassurance:
     ui:
-        reassurance: 'Réassurance'    
-        reassurances: 'Réassurances'    
+        reassurance: 'Réassurance'
+        reassurances: 'Réassurances'
         settings: 'Réglages'
         save: 'Enregistrer'
-
+    form:
+        choose_theme_label: 'Choisissez votre thème'
+        choose_theme_placeholder: 'Sélectionnez un thème dans la liste. ("Classic" sera utilisé par défaut)'
+        background_color_label: 'Couleur de fond'
+        title_color_label: 'Couleur des titres'
+        text_color_label: 'Couleur des textes'
+        icon_size_label: 'Taille des icônes (px)'
+    flash:
+        settings_saved: 'Réglages enregistrés avec succès.'
+    menu:
+        main: 'Réassurances'
+        list: 'Toutes les réassurances'
+        new: 'Nouvelle réassurance'
+        settings: 'Réglages globaux'
+    reassurance_form:
+        title_label: 'Titre'
+        text_label: 'Texte'
+        image_label: 'Image'
+        image_name_display_label: ''
+        remove_image_label: "Supprimer l'image actuelle"
+    grid:
+        fields:
+            title: 'Titre'
+            image: 'Image'

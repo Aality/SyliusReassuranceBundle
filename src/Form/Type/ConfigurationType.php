@@ -17,8 +17,8 @@ class ConfigurationType extends AbstractType
         $builder
             ->add('reassuranceTheme', ChoiceType::class, [
                 'choices' => Configuration::REASSURANCE_THEMES,
-                'label' => 'Thèmes',
-                'placeholder' => 'Sélectionnez un thème',
+                'label' => 'aality_reassurance.form.choose_theme_label',
+                'placeholder' => 'aality_reassurance.form.choose_theme_placeholder',
                 'required' => true,
                 'attr' => [
                     'style' => 'max-width: 200px;',
@@ -26,19 +26,19 @@ class ConfigurationType extends AbstractType
             ])
             ->add('backgroundColor', ColorType::class, [
                 'required' => false,
-                'label' => 'Couleur de fond',
+                'label' => 'aality_reassurance.form.background_color_label',
             ])
             ->add('titleColor', ColorType::class, [
                 'required' => false,
-                'label' => 'Couleur des titres',
+                'label' => 'aality_reassurance.form.title_color_label',
             ])
             ->add('textColor', ColorType::class, [
                 'required' => false,
-                'label' => 'Couleur des textes',
+                'label' => 'aality_reassurance.form.text_color_label',
             ])
             ->add('iconSize', NumberType::class, [
                 'required' => false,
-                'label' => 'Taille des icônes',
+                'label' => 'aality_reassurance.form.icon_size_label',
                 'attr' => [
                     'style' => 'max-width: 100px;',
                 ]

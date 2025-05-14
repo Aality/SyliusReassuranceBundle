@@ -4,26 +4,26 @@ sylius_resource:
             classes:
                 model: Aality\SyliusReassuranceBundle\Entity\Reassurance\Reassurance
                 form: Aality\SyliusReassuranceBundle\Form\Type\ReassuranceType
-                
 
-    
+
+
 services:
     Aality\SyliusReassuranceBundle\EventSubscriber\AdminMenuSubscriber:
         tags:
             - { name: kernel.event_subscriber }
         arguments:
-          [ '@security.helper' ]
+          [ '@security.helper' , '@translator']
     Aality\SyliusReassuranceBundle\Form\Type\ReassuranceType:
         arguments:
             $projectDir: '%kernel.project_dir%'
         tags: [ 'form.type' ]
-        
+
 
     Aality\SyliusReassuranceBundle\Controller\ReassuranceController:
         autowire: true
         autoconfigure: true
         tags: [ 'controller.service_arguments' ]
-        
+
     Aality\SyliusReassuranceBundle\Controller\ConfigurationController:
         autowire: true
         autoconfigure: true
@@ -36,13 +36,14 @@ sylius_grid:
             fields:
                 title:
                     type: string
+                    label: aality_reassurance.grid.fields.title
                 image:
                     type: twig
-                    label: Image
+                    label: aality_reassurance.grid.fields.image
                     path: .
                     options:
                         template: '@SyliusReassuranceBundle/admin/reassurance/Grid/Field/image.html.twig'
-    
+
             driver:
                 name: doctrine/orm
                 options:
@@ -79,7 +80,7 @@ sylius_twig_hooks:
             content:
                 template: '@SyliusAdmin/shared/crud/common/content.html.twig'
                 priority: 0
-        
+
         'sylius_admin.reassurance.index.content':
             flashes:
                 template: '@SyliusAdmin/shared/crud/common/content/flashes.html.twig'
@@ -87,5 +88,7 @@ sylius_twig_hooks:
             header:
                 template: '@SyliusAdmin/shared/crud/common/content/header.html.twig'
                 priority: 200
+                configuration:
+                    header: 'aality_reassurance.crud.header'
             custom_content:
                 template: '@SyliusReassuranceBundle/admin/reassurance-dashboard-content.html.twig'

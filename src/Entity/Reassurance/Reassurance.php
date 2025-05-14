@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Aality\SyliusReassuranceBundle\Repository\ReassuranceRepository;
 
 #[ORM\Entity(repositoryClass: ReassuranceRepository::class)]
+#[ORM\Table(name: 'aality_sylius_reassurance')]
 class Reassurance implements ReassuranceInterface
 {
     #[ORM\Id]

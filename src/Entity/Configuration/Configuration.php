@@ -5,6 +5,7 @@ namespace Aality\SyliusReassuranceBundle\Entity\Configuration;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity]
+#[ORM\Table(name: 'aality_sylius_reassurance_configuration')]
 class Configuration
 {
     #[ORM\Id]

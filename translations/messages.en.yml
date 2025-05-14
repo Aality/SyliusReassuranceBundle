@@ -1,0 +1,30 @@
+aality_reassurance:
+    ui:
+        reassurance: 'Trust Badge'
+        reassurances: 'Trust Badges'
+        settings: 'Settings'
+        save: 'Save'
+    form:
+        choose_theme_label: 'Choose your theme'
+        choose_theme_placeholder: 'Please, select a theme. ("Classic" will be used by default)'
+        background_color_label: 'Backgound color'
+        title_color_label: 'Titles color'
+        text_color_label: 'Text color'
+        icon_size_label: 'Icon size (px)'
+    flash:
+        settings_saved: 'Settings saved succesfully.'
+    menu:
+        main: 'Trust Badges'
+        list: 'All trust badges'
+        new: 'New trust badge'
+        settings: 'Settings'
+    reassurance_form:
+        title_label: 'Title'
+        text_label: 'Text'
+        image_label: 'Image'
+        image_name_display_label: ''
+        remove_image_label: 'Remove current image'
+    grid:
+        fields:
+            title: 'Title'
+            image: 'Badge'
