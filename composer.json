@@ -1,7 +1,7 @@
 {
     "name": "aality/sylius-reassurance-bundle",
     "type": "sylius-plugin",
-    "version": "v1.0.0",
+    "version": "v1.0.1",
     "require": {
         "php": ">=8.2"
     },

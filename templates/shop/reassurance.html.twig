@@ -1,21 +1,18 @@
-
-
 <style>
     #aa-reassurance {
-        {% if configuration and configuration.backgroundColor %}--aa-reassurance-background-color:{{ configuration.backgroundColor }};{% endif %}
-        {% if configuration and configuration.textColor %}--aa-reassurance-text-color:{{ configuration.textColor }};{% endif %}
-        {% if configuration and configuration.titleColor %}--aa-reassurance-title-color:{{ configuration.titleColor }};{% endif %}
+    {% if configuration and configuration.backgroundColor %} --aa-reassurance-background-color: {{ configuration.backgroundColor }};
+    {% endif %} {% if configuration and configuration.textColor %} --aa-reassurance-text-color: {{ configuration.textColor }};
+    {% endif %} {% if configuration and configuration.titleColor %} --aa-reassurance-title-color: {{ configuration.titleColor }};
+    {% endif %}
     }
 </style>
 
-{% if theme is defined and theme == 'classic' %}
+{% if reassurances is defined and reassurances is not empty %}
+    {% if theme is defined and theme == 'classic' %}
+        {% include '@SyliusReassuranceBundle/shop/themes/classic.html.twig' %}
+    {% endif %}
 
-    {% include '@SyliusReassuranceBundle/shop/themes/classic.html.twig' %}
-
-{% endif %}
-
-{% if theme is defined and theme == 'sylius' %}
-
-    {% include '@SyliusReassuranceBundle/shop/themes/sylius.html.twig' %}
-
+    {% if theme is defined and theme == 'sylius' %}
+        {% include '@SyliusReassuranceBundle/shop/themes/sylius.html.twig' %}
+    {% endif %}
 {% endif %}
