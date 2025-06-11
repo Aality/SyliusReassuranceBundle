@@ -24,7 +24,7 @@ final class ReassuranceController extends AbstractController
         if ($configuration instanceof Configuration) {
             $theme = $configuration->getReassuranceTheme();
         } else {
-            $theme = null;
+            return new Response('');
         }
 
         return $this->render(
